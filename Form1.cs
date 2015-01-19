@@ -18,19 +18,19 @@ namespace IO_Projekt
         {
             InitializeComponent();
 
-            
+
             var kilentList = from c in context.klient.Include("czlonek").Include("wypozyczenia") select c;
             var list = kilentList.ToList();
-            
 
-  
+
+
 
             dataGridView1.DataSource = list;
 
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[7].Visible = false;
 
-            
+
 
             //dataGridView1.Columns.Add("Column", "czlonek");
             //dataGridView1.Columns[9].ValueType = typeof(String);
@@ -45,20 +45,20 @@ namespace IO_Projekt
             //    //i++;
             //}
 
-            
-       
+
+
             var samochodList = (from c in context.samochod select c).ToList();
 
             dataGridView2.DataSource = samochodList;
             dataGridView2.Columns[5].Visible = false;
             dataGridView2.Columns[6].Visible = false;
 
-            
+
         }
 
         private void wypozycz_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1 && dataGridView2.SelectedRows.Count == 1) 
+            if (dataGridView1.SelectedRows.Count == 1 && dataGridView2.SelectedRows.Count == 1)
             {
                 foreach (DataGridViewRow temp in dataGridView1.SelectedRows)
                 {
@@ -67,38 +67,39 @@ namespace IO_Projekt
                     var temp3 = temp2[0];
                     var samochod = temp3.DataBoundItem as samochod;
 
-                    
-                    //var context = new IO_Projekt.IOEntities();
-                    //var query =  
-                    wypozyczenia wyp = new wypozyczenia() 
+
+                    if (samochod.stan == "dostepny")
                     {
-                        data_wypozyczenia = DateTime.Now,
-                        id_klienta = klinet.id,
-                        id_samochodu = samochod.id,
-                        klient = klinet,
-                        platnosci = null,
-                        rezerwacja = 0,
-                        samochod = samochod,
-                        data_oddania = null,
-                        id_pracownika = 1,
-                        id = context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
-                        pracownik = (from p in context.pracownik where p.id == 1 select p).FirstOrDefault()
-                    };
-                    
-                    //klinet.wypozyczenia.Add(wyp);
+                        samochod.stan = "zablokowany";
+                        wypozyczenia wyp = new wypozyczenia()
+                        {
+                            data_wypozyczenia = DateTime.Now,
+                            id_klienta = klinet.id,
+                            id_samochodu = samochod.id,
+                            klient = klinet,
+                            platnosci = null,
+                            rezerwacja = 0,
+                            samochod = samochod,
+                            data_oddania = null,
+                            id_pracownika = 1,
+                            id = context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
+                            pracownik = (from p in context.pracownik where p.id == 1 select p).FirstOrDefault()
+                        };
+                        context.wypozyczenia.Add(wyp);
+                        context.SaveChanges();
 
-                    context.wypozyczenia.Add(wyp);
+                        //dodać jakiegoś odświeżanie tabeli
 
+                    }
+                    else if (samochod.stan == "zablokowany")
+                    {
+                        MessageBox.Show("Samochód " + samochod.marka + " " + samochod.model + " jest niedostępny.",
+                        "Samochód niedostępny",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation,
+                        MessageBoxDefaultButton.Button1);
+                    }
 
-                    //if (context.Entry(wyp).State == System.Data.Entity.EntityState.Detached)
-                    //{
-                    //    context.wypozyczenia.Attach(wyp);
-                    //}
-                    
-                    //context.Entry(wyp).State = System.Data.Entity.EntityState.Added;
-
-                    context.SaveChanges();
-                    
                 }
             }
         }
