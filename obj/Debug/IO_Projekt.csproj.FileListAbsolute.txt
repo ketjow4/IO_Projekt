@@ -1,0 +1,13 @@
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\IO_Projekt.exe.config
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\IO_Projekt.exe
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\IO_Projekt.pdb
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\EntityFramework.dll
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\EntityFramework.xml
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.csprojResolveAssemblyReference.cache
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Form1.resources
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Properties.Resources.resources
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.csproj.GenerateResource.Cache
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.exe
+c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.pdb

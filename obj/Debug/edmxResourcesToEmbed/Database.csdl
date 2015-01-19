@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ioModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IOEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="czlonek" EntityType="ioModel.czlonek" />
+    <EntitySet Name="grupy_pracownikow" EntityType="ioModel.grupy_pracownikow" />
+    <EntitySet Name="klient" EntityType="ioModel.klient" />
+    <EntitySet Name="platnosci" EntityType="ioModel.platnosci" />
+    <EntitySet Name="pracownik" EntityType="ioModel.pracownik" />
+    <EntitySet Name="samochod" EntityType="ioModel.samochod" />
+    <EntitySet Name="typ_czlonka" EntityType="ioModel.typ_czlonka" />
+    <EntitySet Name="typ_platnosci" EntityType="ioModel.typ_platnosci" />
+    <EntitySet Name="typ_zabiegu" EntityType="ioModel.typ_zabiegu" />
+    <EntitySet Name="typ_znizki" EntityType="ioModel.typ_znizki" />
+    <EntitySet Name="uprawnienia_czlonka" EntityType="ioModel.uprawnienia_czlonka" />
+    <EntitySet Name="wypozyczenia" EntityType="ioModel.wypozyczenia" />
+    <EntitySet Name="zabiegi_konserwacyjne" EntityType="ioModel.zabiegi_konserwacyjne" />
+    <EntitySet Name="znizki" EntityType="ioModel.znizki" />
+    <EntitySet Name="znizki_platnosci" EntityType="ioModel.znizki_platnosci" />
+    <AssociationSet Name="czlonek_czlonek_ibfk_1" Association="ioModel.czlonek_czlonek_ibfk_1">
+      <End Role="klient" EntitySet="klient" />
+      <End Role="czlonek" EntitySet="czlonek" />
+    </AssociationSet>
+    <AssociationSet Name="czlonek_czlonek_ibfk_2" Association="ioModel.czlonek_czlonek_ibfk_2">
+      <End Role="typ_czlonka" EntitySet="typ_czlonka" />
+      <End Role="czlonek" EntitySet="czlonek" />
+    </AssociationSet>
+    <AssociationSet Name="platnosci_platnosci_ibfk_5" Association="ioModel.platnosci_platnosci_ibfk_5">
+      <End Role="czlonek" EntitySet="czlonek" />
+      <End Role="platnosci" EntitySet="platnosci" />
+    </AssociationSet>
+    <AssociationSet Name="pracownik_pracownik_ibfk_1" Association="ioModel.pracownik_pracownik_ibfk_1">
+      <End Role="grupy_pracownikow" EntitySet="grupy_pracownikow" />
+      <End Role="pracownik" EntitySet="pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="wypozyczenia_wypozyczenia_ibfk_1" Association="ioModel.wypozyczenia_wypozyczenia_ibfk_1">
+      <End Role="klient" EntitySet="klient" />
+      <End Role="wypozyczenia" EntitySet="wypozyczenia" />
+    </AssociationSet>
+    <AssociationSet Name="platnosci_platnosci_ibfk_2" Association="ioModel.platnosci_platnosci_ibfk_2">
+      <End Role="znizki_platnosci" EntitySet="znizki_platnosci" />
+      <End Role="platnosci" EntitySet="platnosci" />
+    </AssociationSet>
+    <AssociationSet Name="platnosci_platnosci_ibfk_3" Association="ioModel.platnosci_platnosci_ibfk_3">
+      <End Role="wypozyczenia" EntitySet="wypozyczenia" />
+      <End Role="platnosci" EntitySet="platnosci" />
+    </AssociationSet>
+    <AssociationSet Name="platnosci_platnosci_ibfk_4" Association="ioModel.platnosci_platnosci_ibfk_4">
+      <End Role="typ_platnosci" EntitySet="typ_platnosci" />
+      <End Role="platnosci" EntitySet="platnosci" />
+    </AssociationSet>
+    <AssociationSet Name="znizki_platnosci_znizki_platnosci_ibfk_2" Association="ioModel.znizki_platnosci_znizki_platnosci_ibfk_2">
+      <End Role="platnosci" EntitySet="platnosci" />
+      <End Role="znizki_platnosci" EntitySet="znizki_platnosci" />
+    </AssociationSet>
+    <AssociationSet Name="wypozyczenia_wypozyczenia_ibfk_3" Association="ioModel.wypozyczenia_wypozyczenia_ibfk_3">
+      <End Role="pracownik" EntitySet="pracownik" />
+      <End Role="wypozyczenia" EntitySet="wypozyczenia" />
+    </AssociationSet>
+    <AssociationSet Name="zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_2" Association="ioModel.zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_2">
+      <End Role="pracownik" EntitySet="pracownik" />
+      <End Role="zabiegi_konserwacyjne" EntitySet="zabiegi_konserwacyjne" />
+    </AssociationSet>
+    <AssociationSet Name="wypozyczenia_wypozyczenia_ibfk_2" Association="ioModel.wypozyczenia_wypozyczenia_ibfk_2">
+      <End Role="samochod" EntitySet="samochod" />
+      <End Role="wypozyczenia" EntitySet="wypozyczenia" />
+    </AssociationSet>
+    <AssociationSet Name="zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_1" Association="ioModel.zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_1">
+      <End Role="samochod" EntitySet="samochod" />
+      <End Role="zabiegi_konserwacyjne" EntitySet="zabiegi_konserwacyjne" />
+    </AssociationSet>
+    <AssociationSet Name="znizki_znizki_ibfk_1" Association="ioModel.znizki_znizki_ibfk_1">
+      <End Role="typ_znizki" EntitySet="typ_znizki" />
+      <End Role="znizki" EntitySet="znizki" />
+    </AssociationSet>
+    <AssociationSet Name="znizki_platnosci_znizki_platnosci_ibfk_1" Association="ioModel.znizki_platnosci_znizki_platnosci_ibfk_1">
+      <End Role="znizki" EntitySet="znizki" />
+      <End Role="znizki_platnosci" EntitySet="znizki_platnosci" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="czlonek">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_klienta" Type="Int32" Nullable="false" />
+    <Property Name="typ_czlonkowstwa" Type="Int32" Nullable="false" />
+    <Property Name="data_przystapienia" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="klient" Relationship="ioModel.czlonek_czlonek_ibfk_1" FromRole="czlonek" ToRole="klient" />
+    <NavigationProperty Name="typ_czlonka" Relationship="ioModel.czlonek_czlonek_ibfk_2" FromRole="czlonek" ToRole="typ_czlonka" />
+    <NavigationProperty Name="platnosci" Relationship="ioModel.platnosci_platnosci_ibfk_5" FromRole="czlonek" ToRole="platnosci" />
+  </EntityType>
+  <EntityType Name="grupy_pracownikow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="pracownik" Relationship="ioModel.pracownik_pracownik_ibfk_1" FromRole="grupy_pracownikow" ToRole="pracownik" />
+  </EntityType>
+  <EntityType Name="klient">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="adres" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="mail" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="telefon" Type="Int32" Nullable="false" />
+    <Property Name="urodziny" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="czlonek" Relationship="ioModel.czlonek_czlonek_ibfk_1" FromRole="klient" ToRole="czlonek" />
+    <NavigationProperty Name="wypozyczenia" Relationship="ioModel.wypozyczenia_wypozyczenia_ibfk_1" FromRole="klient" ToRole="wypozyczenia" />
+  </EntityType>
+  <EntityType Name="platnosci">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="typ_platnosc" Type="Int32" Nullable="false" />
+    <Property Name="id_wypozyczenia" Type="Int32" />
+    <Property Name="id_czlonka" Type="Int32" />
+    <Property Name="id_znizki_platnosci" Type="Int32" />
+    <Property Name="cena_koncowa" Type="Int32" Nullable="false" />
+    <Property Name="data_realizacji" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="czlonek" Relationship="ioModel.platnosci_platnosci_ibfk_5" FromRole="platnosci" ToRole="czlonek" />
+    <NavigationProperty Name="znizki_platnosci" Relationship="ioModel.platnosci_platnosci_ibfk_2" FromRole="platnosci" ToRole="znizki_platnosci" />
+    <NavigationProperty Name="wypozyczenia" Relationship="ioModel.platnosci_platnosci_ibfk_3" FromRole="platnosci" ToRole="wypozyczenia" />
+    <NavigationProperty Name="typ_platnosci" Relationship="ioModel.platnosci_platnosci_ibfk_4" FromRole="platnosci" ToRole="typ_platnosci" />
+    <NavigationProperty Name="znizki_platnosci1" Relationship="ioModel.znizki_platnosci_znizki_platnosci_ibfk_2" FromRole="platnosci" ToRole="znizki_platnosci" />
+  </EntityType>
+  <EntityType Name="pracownik">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="id_grupy" Type="Int32" Nullable="false" />
+    <Property Name="adres" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="mail" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="telefon" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="grupy_pracownikow" Relationship="ioModel.pracownik_pracownik_ibfk_1" FromRole="pracownik" ToRole="grupy_pracownikow" />
+    <NavigationProperty Name="wypozyczenia" Relationship="ioModel.wypozyczenia_wypozyczenia_ibfk_3" FromRole="pracownik" ToRole="wypozyczenia" />
+    <NavigationProperty Name="zabiegi_konserwacyjne" Relationship="ioModel.zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_2" FromRole="pracownik" ToRole="zabiegi_konserwacyjne" />
+  </EntityType>
+  <EntityType Name="samochod">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="marka" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="model" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="kwota" Type="Int32" Nullable="false" />
+    <Property Name="stan" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="wypozyczenia" Relationship="ioModel.wypozyczenia_wypozyczenia_ibfk_2" FromRole="samochod" ToRole="wypozyczenia" />
+    <NavigationProperty Name="zabiegi_konserwacyjne" Relationship="ioModel.zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_1" FromRole="samochod" ToRole="zabiegi_konserwacyjne" />
+  </EntityType>
+  <EntityType Name="typ_czlonka">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="kwota" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="czlonek" Relationship="ioModel.czlonek_czlonek_ibfk_2" FromRole="typ_czlonka" ToRole="czlonek" />
+  </EntityType>
+  <EntityType Name="typ_platnosci">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="platnosci" Relationship="ioModel.platnosci_platnosci_ibfk_4" FromRole="typ_platnosci" ToRole="platnosci" />
+  </EntityType>
+  <EntityType Name="typ_zabiegu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="typ_znizki">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="znizki" Relationship="ioModel.znizki_znizki_ibfk_1" FromRole="typ_znizki" ToRole="znizki" />
+  </EntityType>
+  <EntityType Name="uprawnienia_czlonka">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="standard" Type="Int16" Nullable="false" />
+    <Property Name="silver" Type="Int16" Nullable="false" />
+    <Property Name="gold" Type="Int16" Nullable="false" />
+    <Property Name="platinum" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wypozyczenia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_klienta" Type="Int32" Nullable="false" />
+    <Property Name="id_samochodu" Type="Int32" Nullable="false" />
+    <Property Name="data_wypozyczenia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="data_oddania" Type="DateTime" Precision="0" />
+    <Property Name="rezerwacja" Type="Int16" Nullable="false" />
+    <Property Name="id_pracownika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="klient" Relationship="ioModel.wypozyczenia_wypozyczenia_ibfk_1" FromRole="wypozyczenia" ToRole="klient" />
+    <NavigationProperty Name="platnosci" Relationship="ioModel.platnosci_platnosci_ibfk_3" FromRole="wypozyczenia" ToRole="platnosci" />
+    <NavigationProperty Name="pracownik" Relationship="ioModel.wypozyczenia_wypozyczenia_ibfk_3" FromRole="wypozyczenia" ToRole="pracownik" />
+    <NavigationProperty Name="samochod" Relationship="ioModel.wypozyczenia_wypozyczenia_ibfk_2" FromRole="wypozyczenia" ToRole="samochod" />
+  </EntityType>
+  <EntityType Name="zabiegi_konserwacyjne">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_samochodu" Type="Int32" Nullable="false" />
+    <Property Name="id_pracownika" Type="Int32" Nullable="false" />
+    <Property Name="data_rozpoczecia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="data_zakonczenia" Type="DateTime" Precision="0" />
+    <Property Name="wykonane" Type="Int16" Nullable="false" />
+    <Property Name="typ_zabiegu_konserwacyjnego" Type="Int32" Nullable="false" />
+    <Property Name="opis_zabiegu" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="pracownik" Relationship="ioModel.zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_2" FromRole="zabiegi_konserwacyjne" ToRole="pracownik" />
+    <NavigationProperty Name="samochod" Relationship="ioModel.zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_1" FromRole="zabiegi_konserwacyjne" ToRole="samochod" />
+  </EntityType>
+  <EntityType Name="znizki">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_typ_znizki" Type="Int32" Nullable="false" />
+    <Property Name="procent" Type="Int32" Nullable="false" />
+    <Property Name="kwota" Type="Int32" Nullable="false" />
+    <Property Name="lacznosc" Type="Int16" Nullable="false" />
+    <Property Name="opis" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="typ_znizki" Relationship="ioModel.znizki_znizki_ibfk_1" FromRole="znizki" ToRole="typ_znizki" />
+    <NavigationProperty Name="znizki_platnosci" Relationship="ioModel.znizki_platnosci_znizki_platnosci_ibfk_1" FromRole="znizki" ToRole="znizki_platnosci" />
+  </EntityType>
+  <EntityType Name="znizki_platnosci">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_znizki" Type="Int32" Nullable="false" />
+    <Property Name="id_platnosci" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="platnosci" Relationship="ioModel.platnosci_platnosci_ibfk_2" FromRole="znizki_platnosci" ToRole="platnosci" />
+    <NavigationProperty Name="platnosci1" Relationship="ioModel.znizki_platnosci_znizki_platnosci_ibfk_2" FromRole="znizki_platnosci" ToRole="platnosci" />
+    <NavigationProperty Name="znizki" Relationship="ioModel.znizki_platnosci_znizki_platnosci_ibfk_1" FromRole="znizki_platnosci" ToRole="znizki" />
+  </EntityType>
+  <Association Name="czlonek_czlonek_ibfk_1">
+    <End Role="klient" Type="ioModel.klient" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="czlonek" Type="ioModel.czlonek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klient">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="czlonek">
+        <PropertyRef Name="id_klienta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="czlonek_czlonek_ibfk_2">
+    <End Role="typ_czlonka" Type="ioModel.typ_czlonka" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="czlonek" Type="ioModel.czlonek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typ_czlonka">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="czlonek">
+        <PropertyRef Name="typ_czlonkowstwa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="platnosci_platnosci_ibfk_5">
+    <End Role="czlonek" Type="ioModel.czlonek" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="platnosci" Type="ioModel.platnosci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="czlonek">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="platnosci">
+        <PropertyRef Name="id_czlonka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pracownik_pracownik_ibfk_1">
+    <End Role="grupy_pracownikow" Type="ioModel.grupy_pracownikow" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pracownik" Type="ioModel.pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grupy_pracownikow">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pracownik">
+        <PropertyRef Name="id_grupy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wypozyczenia_wypozyczenia_ibfk_1">
+    <End Role="klient" Type="ioModel.klient" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="wypozyczenia" Type="ioModel.wypozyczenia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klient">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wypozyczenia">
+        <PropertyRef Name="id_klienta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="platnosci_platnosci_ibfk_2">
+    <End Role="znizki_platnosci" Type="ioModel.znizki_platnosci" Multiplicity="0..1" />
+    <End Role="platnosci" Type="ioModel.platnosci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="znizki_platnosci">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="platnosci">
+        <PropertyRef Name="id_znizki_platnosci" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="platnosci_platnosci_ibfk_3">
+    <End Role="wypozyczenia" Type="ioModel.wypozyczenia" Multiplicity="0..1" />
+    <End Role="platnosci" Type="ioModel.platnosci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wypozyczenia">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="platnosci">
+        <PropertyRef Name="id_wypozyczenia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="platnosci_platnosci_ibfk_4">
+    <End Role="typ_platnosci" Type="ioModel.typ_platnosci" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="platnosci" Type="ioModel.platnosci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typ_platnosci">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="platnosci">
+        <PropertyRef Name="typ_platnosc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="znizki_platnosci_znizki_platnosci_ibfk_2">
+    <End Role="platnosci" Type="ioModel.platnosci" Multiplicity="1" />
+    <End Role="znizki_platnosci" Type="ioModel.znizki_platnosci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="platnosci">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="znizki_platnosci">
+        <PropertyRef Name="id_platnosci" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wypozyczenia_wypozyczenia_ibfk_3">
+    <End Role="pracownik" Type="ioModel.pracownik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="wypozyczenia" Type="ioModel.wypozyczenia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pracownik">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wypozyczenia">
+        <PropertyRef Name="id_pracownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_2">
+    <End Role="pracownik" Type="ioModel.pracownik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="zabiegi_konserwacyjne" Type="ioModel.zabiegi_konserwacyjne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pracownik">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="zabiegi_konserwacyjne">
+        <PropertyRef Name="id_pracownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wypozyczenia_wypozyczenia_ibfk_2">
+    <End Role="samochod" Type="ioModel.samochod" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="wypozyczenia" Type="ioModel.wypozyczenia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="samochod">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wypozyczenia">
+        <PropertyRef Name="id_samochodu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="zabiegi_konserwacyjne_zabiegi_konserwacyjne_ibfk_1">
+    <End Role="samochod" Type="ioModel.samochod" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="zabiegi_konserwacyjne" Type="ioModel.zabiegi_konserwacyjne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="samochod">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="zabiegi_konserwacyjne">
+        <PropertyRef Name="id_samochodu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="znizki_znizki_ibfk_1">
+    <End Role="typ_znizki" Type="ioModel.typ_znizki" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="znizki" Type="ioModel.znizki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typ_znizki">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="znizki">
+        <PropertyRef Name="id_typ_znizki" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="znizki_platnosci_znizki_platnosci_ibfk_1">
+    <End Role="znizki" Type="ioModel.znizki" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="znizki_platnosci" Type="ioModel.znizki_platnosci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="znizki">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="znizki_platnosci">
+        <PropertyRef Name="id_znizki" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
