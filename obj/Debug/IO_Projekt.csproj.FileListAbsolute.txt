@@ -11,3 +11,6 @@ c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\
 c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.csproj.GenerateResource.Cache
 c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.exe
 c:\users\wojtek\documents\visual studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.pdb
+C:\Users\Damian\Documents\GitHub\IO_Projekt\bin\Debug\IO_Projekt.exe.config
+C:\Users\Damian\Documents\GitHub\IO_Projekt\obj\Debug\IO_Projekt.exe
+C:\Users\Damian\Documents\GitHub\IO_Projekt\obj\Debug\IO_Projekt.pdb

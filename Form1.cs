@@ -22,7 +22,7 @@ namespace IO_Projekt
             var kilentList = from c in context.klient.Include("czlonek").Include("wypozyczenia") select c;
             var list = kilentList.ToList();
 
-
+            //moj komentarz damian
 
 
             dataGridView1.DataSource = list;
