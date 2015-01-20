@@ -13,13 +13,15 @@ namespace IO_Projekt
     public partial class Form1 : Form
     {
         IOEntities context = new IO_Projekt.IOEntities();
+        
 
         public Form1()
         {
             InitializeComponent();
 
 
-            var kilentList = from c in context.klient.Include("czlonek").Include("wypozyczenia") select c;
+            //var kilentList = from c in context.klient.Include("czlonek").Include("wypozyczenia") select c;
+            var kilentList = from c in Config.context.klient.Include("czlonek").Include("wypozyczenia") select c;
             var list = kilentList.ToList();
 
             //moj komentarz damian
@@ -47,7 +49,8 @@ namespace IO_Projekt
 
 
 
-            var samochodList = (from c in context.samochod select c).ToList();
+            //var samochodList = (from c in context.samochod select c).ToList();
+            var samochodList = (from c in Config.context.samochod select c).ToList();
 
             dataGridView2.DataSource = samochodList;
             dataGridView2.Columns[5].Visible = false;
@@ -82,11 +85,15 @@ namespace IO_Projekt
                             samochod = samochod,
                             data_oddania = null,
                             id_pracownika = 1,
-                            id = context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
-                            pracownik = (from p in context.pracownik where p.id == 1 select p).FirstOrDefault()
+                            //id = context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
+                            //pracownik = (from p in context.pracownik where p.id == 1 select p).FirstOrDefault()
+                            id = Config.context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
+                            pracownik = (from p in Config.context.pracownik where p.id == 1 select p).FirstOrDefault()
                         };
                         context.wypozyczenia.Add(wyp);
                         context.SaveChanges();
+                        Config.context.wypozyczenia.Add(wyp);
+                        Config.context.SaveChanges();
 
                         //dodać jakiegoś odświeżanie tabeli
 

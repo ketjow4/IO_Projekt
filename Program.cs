@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IO_Projekt.Payments;
 
 namespace IO_Projekt
 {
@@ -16,7 +17,8 @@ namespace IO_Projekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            
+            Application.Run(new MainForm());
         }
     }
 }
