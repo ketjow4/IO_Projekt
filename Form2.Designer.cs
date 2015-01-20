@@ -31,6 +31,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.Nowozency = new System.Windows.Forms.CheckBox();
+            this.Promocja = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -61,11 +63,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Nowozency
+            // 
+            this.Nowozency.AutoSize = true;
+            this.Nowozency.Location = new System.Drawing.Point(13, 300);
+            this.Nowozency.Name = "Nowozency";
+            this.Nowozency.Size = new System.Drawing.Size(82, 17);
+            this.Nowozency.TabIndex = 3;
+            this.Nowozency.Text = "Nowożeńcy";
+            this.Nowozency.UseVisualStyleBackColor = true;
+            // 
+            // Promocja
+            // 
+            this.Promocja.AutoSize = true;
+            this.Promocja.Location = new System.Drawing.Point(13, 277);
+            this.Promocja.Name = "Promocja";
+            this.Promocja.Size = new System.Drawing.Size(126, 17);
+            this.Promocja.TabIndex = 4;
+            this.Promocja.Text = "Promocja świąteczna";
+            this.Promocja.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 335);
+            this.Controls.Add(this.Promocja);
+            this.Controls.Add(this.Nowozency);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -74,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +107,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox Nowozency;
+        private System.Windows.Forms.CheckBox Promocja;
     }
 }

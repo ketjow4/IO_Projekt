@@ -78,7 +78,7 @@ namespace IO_Projekt
                             platnosci = null,
                             rezerwacja = 0,
                             samochod = samochod,
-                            data_oddania = null,
+                            data_oddania = dateTimePicker1.Value,
                             id_pracownika = 1,
                             id = context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
                             pracownik = (from p in context.pracownik where p.id == 1 select p).FirstOrDefault()
