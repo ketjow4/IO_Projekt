@@ -108,16 +108,6 @@ namespace IO_Projekt
                 var temp = dataGridView1.SelectedRows;
                 var temp2 = temp[0];
                 var klient = temp2.DataBoundItem as klient;
-
-
-
-
-                this.Hide();
-                //this.Close();
-                Form2 f2 = new Form2();
-                f2.do_zaplaty = klient;
-                f2.Create();
-                f2.ShowDialog();
             }
         }
     }
