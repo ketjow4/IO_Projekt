@@ -19,7 +19,8 @@ namespace IO_Projekt
         {
             InitializeComponent();
 
-            var kilentList = from c in Config.context.klient.Include("czlonek").Include("wypozyczenia") select c;
+            //var kilentList = from c in Config.context.klient.Include("czlonek").Include("wypozyczenia") select c;
+            var kilentList = from c in Config.context.klient select c;
             var list = kilentList.ToList();
 
             dataGridView1.DataSource = list;
