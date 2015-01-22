@@ -12,15 +12,13 @@ namespace IO_Projekt
 {
     public partial class Form1 : Form
     {
-        IOEntities context = DatabaseContext.getContext();
+        IOEntities context = Config.context;
         
 
         public Form1()
         {
             InitializeComponent();
 
-
-            //var kilentList = from c in context.klient.Include("czlonek").Include("wypozyczenia") select c;
             var kilentList = from c in Config.context.klient.Include("czlonek").Include("wypozyczenia") select c;
             var list = kilentList.ToList();
 
@@ -28,19 +26,7 @@ namespace IO_Projekt
 
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[7].Visible = false;
-            //dataGridView1.Columns.Add("Column", "czlonek");
-            //dataGridView1.Columns[9].ValueType = typeof(String);
-            //dataGridView1.Rows[1].Cells[9].Value = "jakisteskst";
-            //dataGridView1.Refresh();
-
-            //int i = 0;
-            //foreach (var klient in kilentList)
-            //{
-            //    if (klient.czlonek != null) ;
-            //    dataGridView1.Rows[2].Cells[9].Value = "jakis tekst";
-            //    //i++;
-            //}
-            //var samochodList = (from c in context.samochod select c).ToList();
+            
             var samochodList = (from c in Config.context.samochod select c).ToList();
             dataGridView2.DataSource = samochodList;
             dataGridView2.Columns[5].Visible = false;
@@ -106,16 +92,6 @@ namespace IO_Projekt
                     }
 
                 }
-            }
-        }
-
-        private void zaplac_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                var temp = dataGridView1.SelectedRows;
-                var temp2 = temp[0];
-                var klient = temp2.DataBoundItem as klient;
             }
         }
     }
