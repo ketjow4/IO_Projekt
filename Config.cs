@@ -9,5 +9,6 @@ namespace IO_Projekt
     class Config
     {
         public static IOEntities context = new IO_Projekt.IOEntities();
+
     }
 }
