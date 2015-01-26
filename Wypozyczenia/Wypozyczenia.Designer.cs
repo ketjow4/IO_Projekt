@@ -1,6 +1,6 @@
 ﻿namespace IO_Projekt
 {
-    partial class Form1
+    partial class Wypozyczenia
     {
         /// <summary>
         /// Required designer variable.

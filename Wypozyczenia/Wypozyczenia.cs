@@ -10,26 +10,24 @@ using System.Windows.Forms;
 
 namespace IO_Projekt
 {
-    public partial class Form1 : Form
+    public partial class Wypozyczenia : Form
     {
         IOEntities context = Config.context;
         
 
-        public Form1()
+        public Wypozyczenia()
         {
             InitializeComponent();
+            //pobiera liste klientow z bazy dancyh
+            var kilentLista = (from c in Config.context.klient select c).ToList();
 
-            //var kilentList = from c in Config.context.klient.Include("czlonek").Include("wypozyczenia") select c;
-            var kilentList = from c in Config.context.klient select c;
-            var list = kilentList.ToList();
-
-            dataGridView1.DataSource = list;
-
+            dataGridView1.DataSource = kilentLista;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[7].Visible = false;
-            
-            var samochodList = (from c in Config.context.samochod select c).ToList();
-            dataGridView2.DataSource = samochodList;
+            //pobiera liste samochodow z bazy danych
+            var samochodLista = (from c in Config.context.samochod select c).ToList();
+           
+            dataGridView2.DataSource = samochodLista;
             dataGridView2.Columns[5].Visible = false;
             dataGridView2.Columns[6].Visible = false;
         }
@@ -38,16 +36,12 @@ namespace IO_Projekt
         {
             if (dataGridView1.SelectedRows.Count == 1 && dataGridView2.SelectedRows.Count == 1)
             {
-                foreach (DataGridViewRow temp in dataGridView1.SelectedRows)
-                {
-                    var klient = temp.DataBoundItem as klient;
-                    var temp2 = dataGridView2.SelectedRows;
-                    var temp3 = temp2[0];
-                    var samochod = temp3.DataBoundItem as samochod;
+                    var klient = dataGridView1.SelectedRows[0].DataBoundItem as klient;
+                    var samochod = dataGridView2.SelectedRows[0].DataBoundItem as samochod;
 
-                    var lista_wypozyczonych = (from s in context.wypozyczenia where s.id_klienta == klient.id && s.data_oddania == null select s).ToList();
+                    var listaWypozyczonych = (from s in context.wypozyczenia where s.id_klienta == klient.id && s.data_oddania == null select s).ToList();
 
-                    if (lista_wypozyczonych.Count >= 1 && klient.czlonek.Count == 0)
+                    if (listaWypozyczonych.Count >= 1 && klient.czlonek.Count == 0)
                     {
                         MessageBox.Show("Zwykły klient może wypożyczyć tylko jeden samochód.",
                         "Nie można wypożyczyć",
@@ -71,16 +65,12 @@ namespace IO_Projekt
                             samochod = samochod,
                             data_oddania = dateTimePicker1.Value,
                             id_pracownika = 1,
-                            //id = context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
-                            //pracownik = (from p in context.pracownik where p.id == 1 select p).FirstOrDefault()
                             id = Config.context.samochod.OrderByDescending(s => s.id).FirstOrDefault().id + 1,
                             pracownik = (from p in Config.context.pracownik where p.id == 1 select p).FirstOrDefault()
                         };
                         context.wypozyczenia.Add(wyp);
                         context.SaveChanges();
                         dataGridView2.Refresh();
-                        Config.context.wypozyczenia.Add(wyp);
-                        Config.context.SaveChanges();
                     }
                     else if (samochod.stan == "zablokowany")
                     {
@@ -91,8 +81,6 @@ namespace IO_Projekt
                         MessageBoxDefaultButton.Button1);
                         return ; 
                     }
-
-                }
             }
         }
     }
