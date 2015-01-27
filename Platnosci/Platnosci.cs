@@ -46,6 +46,10 @@ namespace IO_Projekt.Payments
                 dgvPlatnosci.DataSource = platnosci.ToList();
 
             dgvPlatnosci.Columns[0].Visible = false;
+            dgvPlatnosci.Columns[10].Visible = false;
+            dgvPlatnosci.Columns[7].Visible = false;
+            dgvPlatnosci.Columns[8].Visible = false;
+            dgvPlatnosci.Columns[9].Visible = false;
         }
 
 
