@@ -73,11 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.edmx</DependentUpon>
     </Compile>
-    <Compile Include="CarRental\Form1.cs">
+    <Compile Include="Wypozyczenia\Wypozyczenia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarRental\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Wypozyczenia\Wypozyczenia.Designer.cs">
+      <DependentUpon>Wypozyczenia.cs</DependentUpon>
     </Compile>
     <Compile Include="grupy_pracownikow.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -85,17 +85,17 @@
     <Compile Include="klient.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="GlownaFormatka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="GlownaFormatka.Designer.cs">
+      <DependentUpon>GlownaFormatka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payments\PaymentsForm.cs">
+    <Compile Include="Platnosci\Platnosci.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Payments\PaymentsForm.Designer.cs">
-      <DependentUpon>PaymentsForm.cs</DependentUpon>
+    <Compile Include="Platnosci\Platnosci.Designer.cs">
+      <DependentUpon>Platnosci.cs</DependentUpon>
     </Compile>
     <Compile Include="platnosci.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -135,14 +135,14 @@
     <Compile Include="znizki_platnosci.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CarRental\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Wypozyczenia\Wypozyczenia.resx">
+      <DependentUpon>Wypozyczenia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="GlownaFormatka.resx">
+      <DependentUpon>GlownaFormatka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payments\PaymentsForm.resx">
-      <DependentUpon>PaymentsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Platnosci\Platnosci.resx">
+      <DependentUpon>Platnosci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

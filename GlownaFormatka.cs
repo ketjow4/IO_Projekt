@@ -11,9 +11,9 @@ using IO_Projekt.Payments;
 
 namespace IO_Projekt
 {
-    public partial class MainForm : Form
+    public partial class GlownaFormatka : Form
     {
-        public MainForm()
+        public GlownaFormatka()
         {
             InitializeComponent();
         }
@@ -25,13 +25,13 @@ namespace IO_Projekt
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            PaymentsForm formatka = new PaymentsForm();
+            Platnosci formatka = new Platnosci();
             formatka.Show();
         }
 
         private void btnRent_Click(object sender, EventArgs e)
         {
-            Form1 formatka = new Form1();
+            Wypozyczenia formatka = new Wypozyczenia();
             formatka.Show();
         }
     }

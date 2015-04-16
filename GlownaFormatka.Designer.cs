@@ -1,6 +1,6 @@
 ﻿namespace IO_Projekt
 {
-    partial class MainForm
+    partial class GlownaFormatka
     {
         /// <summary>
         /// Required designer variable.

@@ -1,8 +1,5 @@
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\IO_Projekt.exe.config
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.csprojResolveAssemblyReference.cache
-C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Form1.resources
-C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.MainForm.resources
-C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Payments.PaymentsForm.resources
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Properties.Resources.resources
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.csproj.GenerateResource.Cache
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\IO_Projekt.exe
@@ -13,3 +10,6 @@ C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\bin\
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.exe
 C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.pdb
+C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Wypozyczenia.resources
+C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.GlownaFormatka.resources
+C:\Users\wojtek\Documents\Visual Studio 2012\Projects\IO_Projekt\IO_Projekt\obj\Debug\IO_Projekt.Payments.Platnosci.resources
